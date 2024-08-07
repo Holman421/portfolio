@@ -1,0 +1,14 @@
+.heading {
+  font: "Orbitron", sans-serif;
+  text-align: center;
+  position: relative;
+  display: block;
+  font-size: 3.5rem;
+  padding: 2rem 0rem;
+  font-weight: 500;
+  margin: 0;
+
+  &.secondaryFont {
+    font: "Exo 2", sans-serif;
+  }
+}

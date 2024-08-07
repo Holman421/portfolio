@@ -1,0 +1,22 @@
+@import "../../SCSS/mixins";
+
+
+.projectContainer {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    left: var(--left);
+    margin-top: var(--marginTop);
+    margin-bottom: var(--marginBottom);
+  
+    @include bellow800px {
+      display: block;
+      left: 0;
+      margin-top: var(--marginTop);
+      transition: all 300ms ease;
+    }
+  
+    @include above1300px {
+      margin-top: calc(var(--marginTop) * 2);
+    }
+  }

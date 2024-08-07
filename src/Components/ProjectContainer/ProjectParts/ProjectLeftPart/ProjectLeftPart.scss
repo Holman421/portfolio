@@ -1,0 +1,72 @@
+@import "../../../../SCSS/mixins";
+
+.projectLeftPart {
+  opacity: 1;
+  width: 17rem;
+  height: 10rem;
+  background-color: var(--main-light);
+  position: relative;
+
+  @include bellow800px {
+    width: 16rem;
+    height: 8rem;
+  }
+
+  @include above1300px {
+    width: 20rem;
+    height: 12rem;
+  }
+}
+
+.projectLeftPartInner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background: linear-gradient(
+    180deg,
+    var(--main-gradient-light) -0%,
+    var(--main-gradient-dark) 100%
+  );
+}
+
+.projectName {
+  position: absolute;
+  z-index: 21;
+  bottom: 2rem;
+  font-size: 1.45rem;
+  left: 1.25rem;
+
+  @include bellow800px {
+    font-size: 1.25rem;
+  }
+
+  @include above1300px {
+    font-size: 1.75rem;
+  }
+}
+
+.projectNumber {
+  position: absolute;
+  top: 0.5rem;
+  left: 1.25rem;
+  z-index: 21;
+  font-size: 2.5rem;
+
+  @include above1300px {
+    font-size: 3rem;
+  }
+}
+
+.glossElement {
+  position: absolute;
+  z-index: 19;
+  top: -1.6rem;
+  right: 1.8rem;
+  opacity: 1;
+}
+
+.shadows {
+  z-index: 50;
+  right: 2.75rem;
+}

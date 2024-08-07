@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box !important;
+  text-decoration: none !important;
+  color: white;
+  font-family: "Orbitron", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow-x: hidden;
+  background-color: black;
+}
+
+// body::-webkit-scrollbar {
+//   display: none;
+// }
+
+html {
+  overflow-x: hidden;
+}
+
+:root {
+  --main-light: #29C4CE;
+  --main-dark: #0D7A82;
+  --main-gradient-light: #1e9ca5;
+  --main-gradient-dark: #0c2e33;
+  --secondary-light: #CF6C29;
+  --secondary-dark: #823500;
+  --secondary-gradient-light: #ce6c29;
+  --secondary-gradient-dark: #512b10;
+}
