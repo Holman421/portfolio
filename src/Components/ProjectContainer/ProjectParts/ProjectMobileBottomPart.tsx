@@ -33,7 +33,6 @@ const ProjectMobileBottomPart: React.FC<ProjectMobileBottomPartProps> = ({
         start: "top-=208 75%",
         end: "top 25%",
         toggleActions: "play none none none",
-        markers: true,
       },
     });
 

@@ -101,7 +101,6 @@ const ProjectLeftPart: React.FC<ProjectLeftPartProps> = ({
           start: "top 75%",
           end: "top 25%",
           toggleActions: "play none none none",
-          markers: true,
         },
       });
 

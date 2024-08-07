@@ -7,7 +7,7 @@ import { Link } from "react-scroll";
 
 const MainBox: React.FC = () => {
   const currentIndex = useSelector(
-    (state: StoreType) => state.themeState.currentPageIndex
+    (state: StoreType) => state.themeState.currentPageIndex,
   );
   return (
     <Box
@@ -29,6 +29,10 @@ const CurrentPageIndicator: React.FC = () => {
     width: ".7rem",
     height: ".7rem",
     cursor: "pointer",
+    transition: "border 200ms ease",
+    "&:hover": {
+      borderColor: "#CF6C29",
+    },
   };
   return (
     <Box
@@ -48,40 +52,16 @@ const CurrentPageIndicator: React.FC = () => {
       }}
     >
       <MainBox />
-      <Link
-        to="#hero"
-        spy={true}
-        smooth={true}
-        offset={50}
-        duration={1400}
-      >
+      <Link to="#hero" spy={true} smooth={true} offset={50} duration={1400}>
         <Box sx={boxStyling} />
       </Link>
-      <Link
-        to="#projects"
-        spy={true}
-        smooth={true}
-        offset={50}
-        duration={1400}
-      >
+      <Link to="#projects" spy={true} smooth={true} offset={50} duration={1400}>
         <Box sx={boxStyling} />
       </Link>
-      <Link
-        to="#avatar"
-        spy={true}
-        smooth={true}
-        offset={50}
-        duration={1400}
-      >
+      <Link to="#avatar" spy={true} smooth={true} offset={50} duration={1400}>
         <Box sx={boxStyling} />
       </Link>
-      <Link
-        to="#contactMe"
-        spy={true}
-        smooth={true}
-        offset={50}
-        duration={1400}
-      >
+      <Link to="#contactMe" spy={true} smooth={true} offset={50} duration={1400}>
         <Box sx={boxStyling} />
       </Link>
     </Box>

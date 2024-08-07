@@ -101,7 +101,7 @@ const ShowProjectsButton = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ref.current,
-        start: "top 75%",
+        start: "top 95%",
         end: "top 25%",
         toggleActions: "play none none none",
       },
