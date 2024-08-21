@@ -15,9 +15,9 @@ body {
   background-color: black;
 }
 
-// body::-webkit-scrollbar {
-//   display: none;
-// }
+body::-webkit-scrollbar {
+  display: none;
+}
 
 html {
   overflow-x: hidden;

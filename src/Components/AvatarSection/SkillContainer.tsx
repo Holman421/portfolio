@@ -12,6 +12,7 @@ import { createClipPath } from "../../Utils/HelperFunctions/createClipPath";
 import { toggleCursor } from "../../Redux/reducers/cursorReducer";
 import useSelectAppropriateText from "../../Utils/CustomHooks/useSelectAppropriateText";
 import AbstractDescBars from "../AbstractDescBars";
+import DownloadIcon from "@mui/icons-material/Download";
 
 type SkillContainerProps = {
   title: string;
@@ -27,7 +28,7 @@ type SkillContainerProps = {
   angle?: string;
   opacity?: string;
   transition?: string;
-  pdf: any;
+  pdf?: any;
   isComplete?: boolean;
   orientation: "left" | "right";
 };
@@ -74,7 +75,7 @@ const SkillContainer: React.FC<SkillContainerProps> = ({
       { x: "- 2px", y: "- 1px" },
       { x: "", y: "- 1px" },
       { x: "+ 1px", y: "- 1px" },
-    ]
+    ],
   );
 
   const {
@@ -96,46 +97,44 @@ const SkillContainer: React.FC<SkillContainerProps> = ({
       { x: "", y: "- 1px" },
       { x: "+ 1px", y: "- 1px" },
       { x: "+ 1px", y: "- 1px" },
-    ]
+    ],
   );
 
-  const {
-    clipPathOutside: titleClipPathOutside,
-    clipPathInside: titleClipPathInside,
-  } = createClipPath<11>(
-    [
-      { x: "0%", y: "0% + 1rem" },
-      { x: "0% + 1rem", y: "0%" },
-      { x: "100% - 4rem", y: "0%" },
-      { x: "100% - 3.5rem", y: "0% + .5rem" },
-      { x: "100% - .5rem", y: "0% + .5rem" },
-      { x: "100%", y: "0% + 1rem" },
-      { x: "100%", y: "100% - 1rem" },
-      { x: "100% - 1rem", y: "100%" },
-      { x: "100% - 4rem", y: "100%" },
-      {
-        x: `100% - ${isAbove1300px ? "6.4rem" : "6rem"}`,
-        y: `100% - ${isAbove1300px ? "2.4rem" : "2rem"}`,
-      },
-      {
-        x: "0%",
-        y: `100% - ${isAbove1300px ? "2.4rem" : "2rem"}`,
-      },
-    ],
-    [
-      { x: "+ 1px", y: "" },
-      { x: "", y: "+ 1px" },
-      { x: "", y: "+ 1px" },
-      { x: "", y: "+ 1px" },
-      { x: "", y: "+ 1px" },
-      { x: "- 1px", y: "" },
-      { x: "- 1px", y: "" },
-      { x: "", y: "- 1px" },
-      { x: "", y: "- 1px" },
-      { x: "", y: "- 1px" },
-      { x: "+ 1px", y: "- 1px" },
-    ]
-  );
+  const { clipPathOutside: titleClipPathOutside, clipPathInside: titleClipPathInside } =
+    createClipPath<11>(
+      [
+        { x: "0%", y: "0% + 1rem" },
+        { x: "0% + 1rem", y: "0%" },
+        { x: "100% - 4rem", y: "0%" },
+        { x: "100% - 3.5rem", y: "0% + .5rem" },
+        { x: "100% - .5rem", y: "0% + .5rem" },
+        { x: "100%", y: "0% + 1rem" },
+        { x: "100%", y: "100% - 1rem" },
+        { x: "100% - 1rem", y: "100%" },
+        { x: "100% - 4rem", y: "100%" },
+        {
+          x: `100% - ${isAbove1300px ? "6.4rem" : "6rem"}`,
+          y: `100% - ${isAbove1300px ? "2.4rem" : "2rem"}`,
+        },
+        {
+          x: "0%",
+          y: `100% - ${isAbove1300px ? "2.4rem" : "2rem"}`,
+        },
+      ],
+      [
+        { x: "+ 1px", y: "" },
+        { x: "", y: "+ 1px" },
+        { x: "", y: "+ 1px" },
+        { x: "", y: "+ 1px" },
+        { x: "", y: "+ 1px" },
+        { x: "- 1px", y: "" },
+        { x: "- 1px", y: "" },
+        { x: "", y: "- 1px" },
+        { x: "", y: "- 1px" },
+        { x: "", y: "- 1px" },
+        { x: "+ 1px", y: "- 1px" },
+      ],
+    );
 
   const {
     clipPathOutside: titleClipPathOutsideSmall,
@@ -156,28 +155,22 @@ const SkillContainer: React.FC<SkillContainerProps> = ({
       { x: "", y: "- 1px" },
       { x: "", y: "- 1px" },
       { x: "+ 1px", y: "- 1px" },
-    ]
+    ],
   );
 
-  const { showSkillsContainers, selectedMode } =
-    useSelector((state: StoreType) => state.avatarState);
-
-  const certificationText = useSelectAppropriateText(
-    "Certification",
-    "Certifikace"
+  const { showSkillsContainers, selectedMode } = useSelector(
+    (state: StoreType) => state.avatarState,
   );
+
+  const certificationText = useSelectAppropriateText("Certification", "Certifikace");
 
   return (
     <Box
       sx={{
         opacity: showSkillsContainers ? opacity : "0",
-        visibility: showSkillsContainers
-          ? "visible"
-          : "hidden",
+        visibility: showSkillsContainers ? "visible" : "hidden",
         transition:
-          selectedMode === "skills"
-            ? "all 1000ms ease-out"
-            : "all 250ms ease-out",
+          selectedMode === "skills" ? "all 1000ms ease-out" : "all 250ms ease-out",
         position: "absolute",
         maxWidth: "10rem",
         top: top,
@@ -197,11 +190,7 @@ const SkillContainer: React.FC<SkillContainerProps> = ({
         }),
       }}
     >
-      <a
-        href={isComplete ? pdf : undefined}
-        rel="noreferrer"
-        target="_blank"
-      >
+      <a href={isComplete ? pdf : undefined} rel="noreferrer" target="_blank">
         <Box
           onMouseEnter={() => {
             isComplete && dispatch(toggleCursor(true));
@@ -248,8 +237,7 @@ const SkillContainer: React.FC<SkillContainerProps> = ({
               ...breakpointLower800px({
                 clipPath: certificationClipPathInsideSmall,
               }),
-              transition:
-                "width 250ms ease, height 250ms ease",
+              transition: "width 250ms ease, height 250ms ease",
             },
           }}
         >
@@ -257,10 +245,12 @@ const SkillContainer: React.FC<SkillContainerProps> = ({
             sx={{
               position: "absolute",
               zIndex: "50",
-              left: "1rem",
+              left: ".7rem",
               bottom: ".5rem",
               fontSize: ".8rem",
               cursor: isComplete ? "pointer" : "auto",
+              display: "flex",
+              alignItems: "center",
               ...breakpointLower800px({
                 fontSize: ".9rem",
                 left: ".9rem",
@@ -270,6 +260,7 @@ const SkillContainer: React.FC<SkillContainerProps> = ({
               }),
             }}
           >
+            {isComplete && <DownloadIcon sx={{ marginRight: ".3rem", fontSize: "1.1rem" }} />}
             {isComplete ? certificationText : "In progress"}
           </Box>
         </Box>
