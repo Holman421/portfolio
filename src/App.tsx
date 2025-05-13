@@ -20,14 +20,22 @@ function App() {
       options={{
         lerp: 0.1,
         duration: 1.5,
+        smoothWheel: true,
       }}
     >
+
       <Box
         sx={{
           minHeight: "100vh",
           maxWidth: "100vw",
+          overflowX: "hidden",
+          position: "relative", // Add position relative to the Box
         }}
       >
+        {/* Background Effect - must be first in DOM */}
+        {/* <GradientGlassEffect /> */}
+
+        {/* Main Content - positioned above background */}
         <CurrentPageIndicator />
         <HeroSection />
         <ProjectSection />

@@ -65,6 +65,16 @@ const AvatarSection: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+    if (selectedMode === "aboutMe") {
+      dispatch(setShowAboutMeContainers(true));
+      dispatch(setShowSkillsContainers(false));
+    } else {
+      dispatch(setShowAboutMeContainers(false));
+      dispatch(setShowSkillsContainers(true));
+    }
+  }, [selectedMode]);
+
   return (
     <SectionWrapper
       nameForNavigation="#avatar"

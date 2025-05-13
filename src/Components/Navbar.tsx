@@ -18,7 +18,7 @@ const Navbar = () => {
       }}
     >
       <NameLogo />
-      <LanguageSwitcher />
+      {/* <LanguageSwitcher /> */}
     </Box>
   );
 };

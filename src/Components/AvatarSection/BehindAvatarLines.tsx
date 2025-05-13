@@ -42,8 +42,8 @@ const BehindAvatarLines: React.FC<BedingAvatarLinesProps> = ({ isIntersecting })
 
   const titleLevel = useSelectAppropriateText("Level", "Level");
   const descriptionLevel = useSelectAppropriateText(
-    `${remainingMonthsUntilJuly()} months until lvl 25`,
-    `${remainingMonthsUntilJuly()} měsíců do 25 levelu`,
+    `${remainingMonthsUntilJuly()} months until lvl 26 (age)`,
+    `${remainingMonthsUntilJuly()} měsíců do 26 levelu (věk)`,
   );
 
   const titleLanguages = useSelectAppropriateText("Languages", "Jazyky");
@@ -54,8 +54,8 @@ const BehindAvatarLines: React.FC<BedingAvatarLinesProps> = ({ isIntersecting })
 
   const titleGoals = useSelectAppropriateText("Goals", "Cíle");
   const descriptionGoals = useSelectAppropriateText(
-    "Becoming a senior frontend developer in remote company",
-    "Stát se senior frontend developerem pro zahraniční společnost",
+    "Become an irreplaceable senior frontend developer",
+    "Stát se nenahraditelným senior frontend developerem",
   );
 
   const { selectedMode } = useSelector((state: StoreType) => state.avatarState);

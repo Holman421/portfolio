@@ -18,6 +18,8 @@ const ContactMeSection: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
 
+  const donwloadButtonText = useSelectAppropriateText("Download CV", "Stáhnout CV");
+
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -54,7 +56,7 @@ const ContactMeSection: React.FC = () => {
         }),
       }}
     >
-      <SectionHeading engHeadingText="Contact me" czHeadingText="Kontaktuj mě" />
+      <SectionHeading engHeadingText="Contact me" czHeadingText="Kontakt" />
 
       <Box
         sx={{
@@ -119,7 +121,7 @@ const ContactMeSection: React.FC = () => {
         >
           <ContactMeButton isIntersecting={isIntersecting}>
             <DownloadIcon sx={{ marginRight: ".5rem" }} />
-            Download CV
+            {donwloadButtonText}
           </ContactMeButton>
         </Box>
       </a>

@@ -1,0 +1,31 @@
+// ScrollTrigger Configuration
+ScrollTrigger.create({
+  trigger: "body",
+  start: "top top",
+  end: "bottom bottom",
+  scrub: 0.2, // Faster response to scrolling
+  markers: true, // Enable markers for debugging
+  invalidateOnRefresh: true,
+  onEnter: () => console.log("ScrollTrigger entered"),
+  onLeave: () => console.log("ScrollTrigger left"),
+  onUpdate: (self) => {
+    // Convert progress from 0-1 to 0-3 for the four sections
+    const progressScale = self.progress * 3;
+    
+    setState((prev) => ({
+      ...prev,
+      progressScale,
+      scrollProgress: self.progress,
+    }));
+
+    // Debug log only when value changes significantly
+    if (Math.abs(self.progress - state.scrollProgress) > 0.05) {
+      console.log(`Scroll progress: ${self.progress.toFixed(2)}, Scale: ${progressScale.toFixed(2)}`);
+    }
+  },
+  onToggle: (self) => {
+    if (self.isActive && state.progressScale === 0) {
+      applyShaderConfig(sectionConfigs[0]);
+    }
+  },
+});
